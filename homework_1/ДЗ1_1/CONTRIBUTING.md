@@ -1,0 +1,24 @@
+# Компиляция и запуск программы
+
+1. Установить NASM (если не установлен)
+```commandline
+sudo apt install nasm
+```
+
+2. Компиляция исходного кода
+
+```commandline
+nasm -f elf64 dz1_1.asm -o dz1_1.o
+```
+
+3. Линковка в исполняемый файл
+
+```commandline
+ld dz1_1.o -o dz1_1
+```
+
+4. Запуск программы
+
+```commandline
+./dz1_1
+```

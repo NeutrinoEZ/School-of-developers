@@ -1,0 +1,37 @@
+     1                                  global _start
+     2                                  
+     3                                  section .data
+     4 00000000 48656C6C6F20776F72-         message db "Hello world"
+     4 00000009 6C64               
+     5                                      length equ $ - message
+     6                                  
+     7 0000000B 647A312E74787400            file db "dz1.txt",0
+     8                                  
+     9                                  section .text
+    10                                  _start:
+    11                                  
+    12 00000000 B802000000                  mov rax, 2
+    13 00000005 48BF-                       mov rdi, file
+    13 00000007 [0B00000000000000] 
+    14 0000000F BE41000000                  mov rsi, 0x41
+    15 00000014 BA84020000                  mov rdx, 0644
+    16                                  
+    17 00000019 0F05                        syscall
+    18                                  
+    19 0000001B 4989C0                      mov r8, rax
+    20                                      
+    21 0000001E B801000000                  mov rax, 1
+    22 00000023 4C89C7                      mov rdi, r8
+    23 00000026 48BE-                       mov rsi, message
+    23 00000028 [0000000000000000] 
+    24 00000030 BA0B000000                  mov rdx, length
+    25 00000035 0F05                        syscall
+    26                                  
+    27 00000037 B803000000                  mov rax, 3
+    28 0000003C 4C89C7                      mov rdi, r8
+    29 0000003F 0F05                        syscall
+    30                                     
+    31 00000041 B83C000000                  mov rax, 60
+    32 00000046 BF00000000                  mov rdi, 0
+    33 0000004B 0F05                        syscall
+    34                                   

@@ -1,0 +1,4 @@
+execve("./dz1_1", ["./dz1_1"], 0x7ffd5edc7220 /* 55 vars */) = 0
+write(1, "Hello world!\n", 13)          = 13
+exit(0)                                 = ?
++++ exited with 0 +++
